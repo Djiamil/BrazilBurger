@@ -1,0 +1,13 @@
+<div class="face-snap-card" [ngClass]="{snapped: snapface.bettonText === 'dejachanger'}">
+    <h2>{{ snapface.title }}</h2>
+    <p>Mis en ligne le {{ snapface.createdDate | date :'longdate'}}</p>
+    <img [src]="snapface.imageUrl" [alt]="snapface.title">
+    <p>{{ snapface.description }}</p>
+    <!-- <p *ngif="facesnap.location">photo prise a {{ snapface.location }}</p> -->
+    <p>
+        🤌 {{ snapface.snaps }}   
+    </p>
+
+    <button (click)="changeb()">{{ snapface.bettonText }} </button>
+    <!-- <a routerLink="facesnaps/{facesnaps/:id}">sHGSHG</a> -->
+  </div>

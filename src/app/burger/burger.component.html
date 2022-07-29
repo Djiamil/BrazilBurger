@@ -1,0 +1,28 @@
+
+<body>
+    <div class="burgerdescription"> 
+        <p>{{ burger.description}}</p>
+    </div>
+    <div class="imgburger">
+            <img [src]="burger.lima" [alt]="burger.description" [title]="burger.description" >
+    </div>
+    <div class="footerimage">
+        <div class="footerimageleft">
+            <div class="burgernom">
+                    <p>{{ burger.nom}}</p>
+            </div>
+            <div class="burgerprix">
+                    <p>prix{{ burger.prix}} </p>
+            </div>
+        </div>
+        <div class="footerimageright">
+            <div class="burgerdetails">
+                <span class= "detaillebtn" (click)="detaille()"ng-click="geek(disable)" ng-disabled="disable">Detaille</span>
+            </div>
+
+                <span id="pasdajou" #desactive><i class="bi bi-cart4" (click)="addToCart(burger);addQantity()">Ajouter</i></span>
+            </div>
+    </div> 
+</body>
+
+

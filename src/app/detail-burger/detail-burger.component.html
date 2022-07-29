@@ -1,0 +1,23 @@
+
+<body>
+        <div class="image-container">
+            <img [src]="burger.lima" [alt]="burger.description" [title]="burger.description" >
+        </div>
+            <div class="detaillimagedetaille">
+                
+                <div class="textdetaile">
+                    <h1>Les detailles du beurger soisit</h1>
+                </div>
+
+                <div class="detaillernomdescription">
+                    <p>{{ burger.nom}}</p>
+                    <!-- <p>{{ burger.description}}</p> -->
+                </div>
+                <div class="detaillerprix">
+                    <p>{{ burger.prix}}</p>
+                </div>
+                        <!-- <div class="detailler" *ngif="addclasses">
+                        </div> -->
+
+            </div>  
+</body>

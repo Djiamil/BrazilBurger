@@ -1,0 +1,95 @@
+img{
+    width: 26rem;
+    height: 20rem;
+    padding: 1rem;
+}
+
+body{
+    margin:0.4rem;
+   background-color:#f7bf45;
+   border:solid 4px black;
+   width: 100%;
+
+}
+
+.detailler{
+    position: absolute;
+    display: flex;
+    height: 30vh;
+    width: 50vw;
+}
+
+.detaillebtn{
+   width: 6rem;
+   height: 2rem;
+   border-radius: 2rem;
+}
+.detaillebtn:hover{
+   background-color:bisque;
+
+}
+
+//L'affichage du card
+.burgerdescription{
+    display: flex;
+    color: red;
+    justify-content: center;
+    align-items: center;
+}
+.imgburger{
+    display: flex;
+    color: red;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerimage{
+    display: flex;
+    color: red;
+    width: 100%;
+    align-items: center;
+
+}
+.footerimageleft{
+    display: flex;
+    color: red;
+    align-items: center;
+    width: 50%;
+    justify-content: space-between;
+
+}
+.burgernom{
+    display: flex;
+    color: red;
+   float: inline-end;
+   
+
+
+}
+.burgernom p:hover{
+    background-color:bisque;
+}
+.burgerprix{
+    display: flex;
+    color: red;
+    margin: 3%;
+ 
+
+}
+.burgerprix p:hover{
+    background-color:bisque;
+}
+.footerimageright{
+    display: flex;
+    color: red;
+    align-items: center;
+    width: 50%;
+    justify-content: space-between;
+
+    
+}
+span:hover{
+    background-color:bisque;
+
+}
+

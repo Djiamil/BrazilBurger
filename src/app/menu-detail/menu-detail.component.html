@@ -1,0 +1,32 @@
+<p>Detail Du menu</p>
+
+<body>
+    <div class="image-container">
+        <img [src]="menu.image">
+    </div>
+        <div class="detaillimagedetaille">
+            
+            <div class="textdetaile">
+                <h1>Les detailles du beurger soisit</h1>
+            </div>
+
+            <div class="detaillernomdescription">
+                <p>{{ menu.nom}}</p>
+                <!-- <p>{{ menu.description}}</p> -->
+            </div>
+            <div class="detaillerprix">
+                <p>{{ menu.prix}}</p>
+            </div>
+                    <!-- <div class="detailler" *ngif="addclasses">
+                    </div> -->
+        </div>  
+        <button type="button" class="btn btn-primary btn-lg btn-block w-25" id="addclasses" [hidden]="taf">Ajouter</button>
+    </body>
+    
+    <div class="tailleboissons" *ngFor="let boisson of boissons">
+        <div class="boissons">
+            <img class="tailleboissonsimg" src="{{boisson.image}}" alt="{{boisson.libeler}}">
+        </div>
+    </div>
+    
+

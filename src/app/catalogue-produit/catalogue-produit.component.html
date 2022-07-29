@@ -1,0 +1,29 @@
+            {{food}}
+            
+            <p class="burger">Mes Burgers</p>
+
+
+
+    <div class="row">
+        <app-burger *ngFor="let burger of burgers" class="col" [burger]="burger"></app-burger>
+    </div>
+
+                <p class="menu text-primary text-center">Menus</p>
+    <div>
+      <app-menu *ngFor="let menu of menus" [menu]="menu"></app-menu>
+    </div>
+
+<!-- 
+    <div class="card" style="width: 18rem;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr93EbfW2-dqVftCXxQq7zGmJZ2xU4O2c18w&usqp=CAU" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div> -->
+
+
+    
+   
+    <!-- <button (click)="addClasse()">changeClasse</button> -->
