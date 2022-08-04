@@ -11,11 +11,13 @@ import {  NgForm} from '@angular/forms';
   templateUrl: './panier-commande.component.html',
   styleUrls: ['./panier-commande.component.scss']
 })
+
 export class PanierCommandeComponent implements OnInit {
   currencyPipe: any;
 
   constructor(private panierservice: PanierService,private router: Router,private burgerservice: BurgerService) {}
   items$: Observable<any>= this.panierservice.items$;
+  itemsmenu$: Observable<any>= this.panierservice.items$;
   burgers: any[]=[]
   @Input() burger!: Burger;
 
@@ -24,10 +26,10 @@ export class PanierCommandeComponent implements OnInit {
   ngOnInit(): void {
   
     // console.log(this.quantity(this.burger))
-
+    this.calculePrixTotal();
      
   }
-  sum: number = 0;
+  sum!: number;
   
   // myusername = (<HTMLInputElement>document.getElementById("username")).value;
   // apprend(){
@@ -42,7 +44,6 @@ export class PanierCommandeComponent implements OnInit {
       }),
     ).subscribe();
   }
-  
 
   // quantity(element:Burger){
   //   const qnt = document.getElementById(`${element.id}`)
@@ -58,6 +59,8 @@ calculePrixTotal(){
   return this.sum 
   
 }
-  
+  validerCommande(){
+   return this.panierservice.validerCommande();
+  }
 
 }

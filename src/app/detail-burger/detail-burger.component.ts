@@ -21,7 +21,7 @@ export class DetailBurgerComponent implements OnInit {
   ngOnInit(): void 
   {
     this.parameters = this.route.snapshot.params['id'];
-   console.log(this.burger = this.burgerService.getOnBurgers(this.parameters));
+   this.burger = this.burgerService.getOnBurgers(this.parameters);
   
 
     //pour le service menu

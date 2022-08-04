@@ -7,9 +7,12 @@ body{
     height: 70%;
     background-color: antiquewhite;
     display: flex;   
-    margin: 3rem;
+    overflow: hidden;
+    position: relative;
     
 }
+
+
 
 
 
@@ -81,43 +84,102 @@ h1{
     font-size: 2rem;
 }
 
-.special{
 
-    display: flex;
-    height: 10vh;
-    width: 8vw;
-    margin: 4%;
+
+
+
+.ajouter{
+    background-color: antiquewhite;
+    display: flex;   
+    margin-top: 10rem;
+    width: 44%;
+    height: 70vh;
+    justify-content: space-between;
 }
-
-
-
-.tailleboissons{
+.commander{
     display: flex;
-    height: 20vh;
-    width: 20vw;
-    flex-wrap: wrap;
-}
-
-.boissons{
-    display: flex;
-    height: 10vh;
-    width: 7vw;
-    margin-top: 10%;
-    flex-wrap: wrap;
-    height: 20vh;
-    width: 20vw;
+    justify-content: center;
+    align-items: center;
 
 }
-.tailleboissons{
+.alivrer{
+    display: flex;
+    margin: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+.surplace{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    width: 10rem;
+    display: flex;
+    height: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+.tafder{
+    display: flex;
     height: 20vh;
-    width: 20vw;
+    width: auto;
+    border: solid red 4px;
+
+}
+.boissonrepeat{
+    height: 20%;
     display: flex;
    
+
 }
 
-.tailleboissonsimg{
-    margin-right: 6px;
+
+.zone{
+    position:absolute;
     display: flex;
-    height: 10vh;
-    width: 10vw;
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+    width: 20%;
+    float: right;
+    margin-right: 0%;
+    margin-left: 75%;
+    margin-top: 8%;
+}
+input{
+    height: 2rem;
+    width: 3rem;
+    margin: 1rem;
+    display: flex;
+    border-radius: 20%;
+    border-color: yellow;
+}
+
+les boissons
+input{
+    height: 2rem;
+    width: 3rem;
+    margin: 1rem;
+    display: flex;
+    border-radius: 20%;
+    border-color: yellow;
+}
+.parcour{
+    height:20%;
+    display: flex;
+    flex-wrap: wrap;
+}
+img{
+    margin: 0%;
+    width: 10rem;
+    height: 3rem;
+}
+.button{
+    height: 2rem;
+    width: 1rem;
+    margin: 2rem;
+    display: flex;
+    border-radius: 20%;
+    border-color: yellow;
 }

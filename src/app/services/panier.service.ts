@@ -2,6 +2,7 @@ import { BehaviorSubject } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { take, map } from 'rxjs/operators';
 import { Burger } from '../models/Burger.model';
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -12,7 +13,8 @@ import { Burger } from '../models/Burger.model';
 })
 export class PanierService {
   burger!:Burger;
-  constructor() {
+  http: any;
+  constructor(private https:HttpClient) {
     let existingCartItems = JSON.parse(localStorage.getItem('products') || '[]');
     if (!existingCartItems) {
       existingCartItems = [];
@@ -20,10 +22,10 @@ export class PanierService {
     this.itemsSubject.next(existingCartItems);
   }
 
-  private itemsSubject = new BehaviorSubject<Burger[]>([]);
-  items$ = this.itemsSubject.asObservable();
+  private itemsSubject = new BehaviorSubject<any[]>([]);
+  items$ = this.itemsSubject.asObservable();                      
 
-  addToCart(product: Burger) {
+  addToCart(product: any) {
     this.items$.pipe(
       take(1),
       map((products) => {
@@ -75,6 +77,21 @@ export class PanierService {
   saveEtat(){
     return  localStorage.setItem('panier', JSON.stringify(this.tab()));
   }
+
+  addQantity(product: any,productStorages: any)
+  {
+    this.items$.subscribe(data=>{
+    productStorages=  data.find(productStorages => product.id === productStorages.id)
+    if(productStorages === undefined){
+      this.addToCart(product)
+    }
+    else 
+    {
+      productStorages.quantity++;
+      this.saveEtat()
+    }
+    })
+  }
  
 
 //   totalPrix(){
@@ -86,4 +103,33 @@ export class PanierService {
 //     return this.burger.find(params => params.id === id);
 // }
 
+table: any[]=[];
+objetLigneCommande:any=[]
+ligneDeComm:any=[]
+zone:any
+post:any
+validerCommande(){
+  this.items$.subscribe(panier =>{
+    this.table = panier;
+    console.log(this.table)
+    this.table.forEach(el =>{
+      this.objetLigneCommande = {
+        "produit":  "/api/produits/"+el.id,
+        "quantite":  +el.quantity
+      }
+      this.ligneDeComm.push(this.objetLigneCommande);
+      console.log(this.ligneDeComm);
+    });
+  });
+    this.https.post<any>('http://127.0.0.1:8000/api/commandes',
+    {
+      "produis": this.ligneDeComm,
+      "zone": "/api/zones/1",
+      "client": "/api/clients/63"
+    })
+    .subscribe((data) =>{
+      this.post.id = data.id
+    });
+      
+}
 }

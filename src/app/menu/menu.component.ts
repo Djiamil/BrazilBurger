@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { from, last } from 'rxjs';
 import { Menu } from '../models/Menu.model';
 import { MenuService } from '../services/menu.service';
+import {PanierService } from '../services/panier.service';
 
 @Component({
   selector: 'app-menu',
@@ -11,7 +12,11 @@ import { MenuService } from '../services/menu.service';
 })
 export class MenuComponent implements OnInit {
   @Input() menu!: Menu;
-  constructor(private router: Router,private menuService: MenuService) { }
+  @Input() frite!: Menu;
+  constructor(private router: Router,
+    private menuService: MenuService,
+    private panierservice: PanierService 
+    ) { }
 
   ngOnInit(): void {
   //  this. existance()
@@ -27,7 +32,10 @@ export class MenuComponent implements OnInit {
 detaille(){
   this.router.navigateByUrl(`menu/${this.menu.id}`);
 }
-
+//Methode pour convertur les images depus le ts
+// convertureImage(param:string){
+//   return this.menuService.convertImage(param);
+// }
 
 
 

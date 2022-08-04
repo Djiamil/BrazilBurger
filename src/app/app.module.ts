@@ -23,6 +23,10 @@ import { PanierCommandeComponent } from './panier-commande/panier-commande.compo
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MenuDetailComponent } from './menu-detail/menu-detail.component';
 import { BoissonComponent } from './boisson/boisson.component';
+import { TailleboissonComponent } from './tailleboisson/tailleboisson.component';
+import { ZonesComponent } from './zones/zones.component';
+import { ClientComponent } from './client/client.component';
+import { ListecommandeclientComponent } from './listecommandeclient/listecommandeclient.component';
 
 
 @NgModule({
@@ -40,7 +44,11 @@ import { BoissonComponent } from './boisson/boisson.component';
     MenuComponent,
     PanierCommandeComponent,
     MenuDetailComponent,
-    BoissonComponent
+    BoissonComponent,
+    TailleboissonComponent,
+    ZonesComponent,
+    ClientComponent,
+    ListecommandeclientComponent
   ],
   imports: [
     BrowserModule,

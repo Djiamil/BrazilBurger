@@ -1,0 +1,33 @@
+.container{
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+    border: solid 2px black;
+    flex-direction: column;
+    width: 100%;
+    height: 50vw;
+}
+p{
+    align-items: center;
+    text-align: center;
+    font-size: 2rem;
+}
+.tableClient{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 2px black;
+    width: 100%;
+    height: auto;
+}
+button{
+    width: 10rem;
+    height: 7%;
+    // margin-left: 2rem;
+}
+tr{
+    margin: 0%;
+}
+table{
+    border: solid 2px black;
+}

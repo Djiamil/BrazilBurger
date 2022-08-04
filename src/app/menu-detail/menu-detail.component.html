@@ -1,10 +1,11 @@
 <p>Detail Du menu</p>
 
+
 <body>
     <div class="image-container">
         <img [src]="menu.image">
     </div>
-        <div class="detaillimagedetaille">
+    <div class="detaillimagedetaille">
             
             <div class="textdetaile">
                 <h1>Les detailles du beurger soisit</h1>
@@ -19,14 +20,49 @@
             </div>
                     <!-- <div class="detailler" *ngif="addclasses">
                     </div> -->
-        </div>  
-        <button type="button" class="btn btn-primary btn-lg btn-block w-25" id="addclasses" [hidden]="taf">Ajouter</button>
-    </body>
-    
-    <div class="tailleboissons" *ngFor="let boisson of boissons">
-        <div class="boissons">
-            <img class="tailleboissonsimg" src="{{boisson.image}}" alt="{{boisson.libeler}}">
-        </div>
+                    <div class="ajouter">
+                        <div class="commander">
+                            <button type="button" id="addclasses" [disabled]="taf" (click)="addQantity(menu)">Ajouter au panier</button>
+                        </div>
+                        <div class="alivrer">
+                            <button type="button" id="addclasses"  >Sur place</button>
+                        </div>
+                        <div class="surplace">
+                            <button type="button" id="addclasses" (click)="zones()">Â livrer</button>
+                        </div>
+                    </div>
+     </div>  
+
+     <div class="zone" *ngFor="let tzone of tabzones">  
+         <select class="form-select" aria-label="select example"[hidden]="zone" >
+            <option selected disabled >----Veiller soisir votre zone----</option>
+            <option value="1">{{tzone.nomzone}}</option>
+        </select> 
     </div>
+</body>
+    <div class="tafder">
+    <div class="boissonrepeat">
+
+        <div class="parcour" *ngFor="let taile of tailes">
+            <p>{{taile.nom}}</p>    
+            <img src="assets/boisson1.jpg" alt="">
+            <p>{{taile.prix}}
+            <button (click)="addmoins(input)">-</button>
+            <input type="number" id="{{taile.id}}" #input class="" min="0" value="0">
+            <button (click)="addplus(input)">+</button> value=
+        </div>
+
+
+    <!-- </div>
+        <input type="number" value="{{quantity}}" disabled>
+        <p>{{libele}}</p>
+    </div> -->
+    <div>
+        <span>{{libele}} : {{quantity}} </span>
+    </div>
+
+    
+
+  
     
 

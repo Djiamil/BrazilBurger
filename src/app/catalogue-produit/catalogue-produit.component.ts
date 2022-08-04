@@ -14,18 +14,24 @@ export class CatalogueProduitComponent implements OnInit {
   constructor(private burgerService: BurgerService,private menuService: MenuService) { }
 
     burgers: Burger[]=[];
-    menus: Menu[]=[];
+    menus!:any[];
+    frite!:any[];
     food:string="";
+   
     ngOnInit(): void {
-       this.burgerService.getBurger().subscribe(data =>{
+      this.burgerService.getBurger().subscribe(data =>{
         this.burgers.push(data);
-       });
+      });
+      this.menuService.getMenuBaseDonne().subscribe(data=>{
+     this.menus = data;
+      this.menus.forEach(item=>{
+      this.frite= item.id;
+      })
+      })
+      }
 
-       this.menuService.getMenuOb().subscribe(datam =>{  this.menus.push(datam)});
-
-
-
-    }
+   
+      //  this.menuService.getMenuOb().subscribe(datam =>{  this.menus.push(datam)});
 
 
     // addmenus(){
@@ -42,5 +48,5 @@ export class CatalogueProduitComponent implements OnInit {
       //     this.burgers=d;
       //   }
       // );
-
+     
 }

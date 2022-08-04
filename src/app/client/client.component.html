@@ -1,0 +1,23 @@
+<div class="container">
+    <p>Liste des clients</p>
+    <div class="tableClient">
+        <table>
+            <tr >
+                <th class="tr">Nom</th>
+                <th class="tr">Prenom</th>
+                <th class="tr">Telephone</th>
+                <th class="tr">email</th>
+                <th class="tr">Actions</th>
+            </tr>
+            <div *ngFor="let client of clients">
+            <tr>
+                <td class="tr">{{client.nom}}</td>
+                <td class="tr">{{client.prenom}}</td>
+                <td class="tr">{{client.telephone}}</td>
+                <td class="tr">{{client.email}}</td>
+                <button class="btn btn-primary" [routerLink]="['/cliente',client.id]">Commande client</button>
+            </tr>
+        </div>
+        </table>
+    </div>
+</div>

@@ -1,5 +1,12 @@
             {{food}}
             
+
+            <div *ngFor="let frit of frite" class="tasj">
+              <div>
+                <p>{{frit.nom}}</p>
+                <p>{{frit.prix}}</p>
+              </div>
+          </div>
             <p class="burger">Mes Burgers</p>
 
 
@@ -13,6 +20,7 @@
       <app-menu *ngFor="let menu of menus" [menu]="menu"></app-menu>
     </div>
 
+   
 <!-- 
     <div class="card" style="width: 18rem;">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr93EbfW2-dqVftCXxQq7zGmJZ2xU4O2c18w&usqp=CAU" class="card-img-top" alt="...">

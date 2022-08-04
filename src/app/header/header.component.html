@@ -2,26 +2,22 @@
 
 <header>
 
-    <p>Bienvenu a Brazil Burge </p>
+  <div>
     <nav>
-        <a routerLink="" routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
-        <a routerLink="burger">Burger</a>
-        <a routerLink="catalogue">Catalogue</a>
-        <a><span class="add" routerLink="panier">+add  {{(items$ | async).length}} </span></a>
-      </nav>
-
-
-      <nav class="navbar navbar-dark bg-dark">
-        <!-- Navbar content -->
-      </nav>
-      
-      <nav class="navbar navbar-dark bg-primary">
-        <!-- Navbar content -->
-      </nav>
-      
-      <nav class="navbar" style="background-color: #e3f2fd;">
-        <!-- Navbar content -->
-      </nav>
+    <a routerLink="" routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    <a routerLink="burger">Burger</a>
+    <a routerLink="catalogue">Catalogue</a>
+    <a routerLink="taille">Taille</a>
+    <a routerLink="cliente">Liste Des client</a>
     
+    <a><span class="add" routerLink="panier">+add  {{(items$ | async).length}} </span></a>
+  </nav>
+</div>
+  
+<!-- Navbar content -->
 
 </header>
+<div class="accueil">
+  <p>Bienvenu a Brazil Burge </p>
+
+</div>

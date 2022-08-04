@@ -9,9 +9,14 @@ body{
 }
 
 div{
-    background-color: #ece7ac;
+    background-color: rgb(0, 0, 0,0.30);
     margin: 2rem;
     height: 40%;
     display: flex;
     flex-wrap: wrap;
+}
+
+.tasj{
+    height: 30vh;
+    border: solid 3px black;
 }

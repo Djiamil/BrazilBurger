@@ -9,45 +9,7 @@ export class BoissonsService {
 
   constructor() { }
 
-  boissons: Boisson[]= [
-
-    {
-      id: 2,
-      taille: "fanta",
-      libeler!: "pm",
-      prix!: 345,
-      quantity!: 4,
-      image!: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKOYUWCCLz_aEJAFVYfF_sR_SS06gKVwUt7w&usqp=CAU"
-
-    },
-    {
-      id: 2,
-      taille: "fanta",
-      libeler!: "pm",
-      prix!: 345,
-      quantity!: 4,
-      image!: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKOYUWCCLz_aEJAFVYfF_sR_SS06gKVwUt7w&usqp=CAU"
-
-    },
-    {
-      id: 2,
-      taille: "fanta",
-      libeler!: "pm",
-      prix!: 345,
-      quantity!: 4,
-      image!: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKOYUWCCLz_aEJAFVYfF_sR_SS06gKVwUt7w&usqp=CAU"
-
-    },
-    {
-      id: 2,
-      taille: "fanta",
-      libeler!: "pm",
-      prix!: 345,
-      quantity!: 4,
-      image!: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKOYUWCCLz_aEJAFVYfF_sR_SS06gKVwUt7w&usqp=CAU"
-
-    },
-  ]
+  boissons: Boisson[]= []
 
   getBoissons():Observable<Boisson>
   {
