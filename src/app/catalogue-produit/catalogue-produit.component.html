@@ -1,3 +1,8 @@
+             <div class="input-group w-25">
+      <input  [(ngModel)]="searchText" id="search-input" type="search" name="search" id="form1" class="form-control w-25" />
+      <button id="search-button" type="button" class="btn btn-primary bg-warning">Search</button>
+    </div>
+            
             {{food}}
             
 
@@ -12,12 +17,12 @@
 
 
     <div class="row">
-        <app-burger *ngFor="let burger of burgers" class="col" [burger]="burger"></app-burger>
+        <app-burger *ngFor="let burger of burgers | filter:searchText" class="col" [burger]="burger"></app-burger>
     </div>
 
                 <p class="menu text-primary text-center">Menus</p>
     <div>
-      <app-menu *ngFor="let menu of menus" [menu]="menu"></app-menu>
+      <app-menu *ngFor="let menu of menus | filter:searchText" [menu]="menu"></app-menu>
     </div>
 
    

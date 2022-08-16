@@ -14,6 +14,7 @@ export class UserService {
     return this.http.get<any>('http://localhost:8000/api/clients');
 
   }
+  
 
   converTab(){
     this.getClient().subscribe(data =>{
@@ -23,7 +24,7 @@ export class UserService {
   }
   getOnClient(id : any) : any
   {
-        console.log(this.converTab().find(params => params.id === id));
-        }
+     return this.converTab().find(params => params.id === id);
+  }
 
 }

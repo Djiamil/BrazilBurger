@@ -13,11 +13,11 @@ import { PanierService } from '../services/panier.service';
 export class HeaderComponent implements OnInit{
   @Input() burger!: Burger;
 burgers:Burger[]=[];
-
+term:any;
 
 constructor(private burgerservice: BurgerService,private panierservice: PanierService) { }
 items$ ?: Observable<any>= this.panierservice.items$;
-  
+searchText:any;
 
   ngOnInit(): void {
     // this.burgerservice.receveproduits().subscribe(d=>

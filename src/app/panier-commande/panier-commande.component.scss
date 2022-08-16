@@ -1,0 +1,84 @@
+button{
+    margin: 1rem;
+}
+.changer{
+    width: 95%;
+}
+.zone{
+    position:absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+    width: 20%;
+    margin-left: 40%;
+    margin-top: 10%;
+    float: right;
+    overflow-x: hidden;
+}
+
+.container{
+    display: flex;
+    position: relative;
+    width: 65%;
+    margin-left: 0%;
+}
+
+.parenzone{
+    display: flex;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.3);
+    visibility: hidden;
+}
+.parenzone{
+    display: flex;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.3);
+    visibility: visible;
+}
+.complementpanier{
+    border: solid 4px black;
+    display: flex;
+    height: 68vh;
+    width: 30%;
+    margin-left:0 ;
+    margin-right: 2%;
+    position: absolute;
+    margin-left: 63%;
+
+}
+.complementBoisson{
+    display: flex;
+    border: solid 2px black;
+    width: 50%;
+    height: 67vh;
+    overflow-y: scroll;
+    flex-direction: column;
+    flex-direction: column;
+   
+}
+.fritesComplement{
+    display: flex;
+    border: solid 4px red;
+    width: 50%;
+    height: 67vh;
+    overflow-y: scroll;
+    flex-direction: column;
+    position: absolute;
+    margin-left: 50%;
+
+
+}
+.friteslister{
+    display: flex;
+    // flex-direction: column;
+}
+.imgfritesComplement{
+    height: 4rem;
+    width: 4rem;
+    margin: 1rem;
+}

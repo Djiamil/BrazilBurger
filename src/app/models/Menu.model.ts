@@ -1,7 +1,7 @@
 import { Burger } from "./Burger.model";
 
 export class Menu{
-    id!: string;
+    id!: number;
     nom!: string;
     image!: string;
     prix!: number;

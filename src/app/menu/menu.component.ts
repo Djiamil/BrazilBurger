@@ -33,9 +33,9 @@ detaille(){
   this.router.navigateByUrl(`menu/${this.menu.id}`);
 }
 //Methode pour convertur les images depus le ts
-// convertureImage(param:string){
-//   return this.menuService.convertImage(param);
-// }
+convertureImage(param:string){
+  return this.menuService.convertImage(param);
+}
 
 
 

@@ -12,7 +12,7 @@ import { MenuService } from '../services/menu.service';
 export class CatalogueProduitComponent implements OnInit {
 
   constructor(private burgerService: BurgerService,private menuService: MenuService) { }
-
+  searchText:any;
     burgers: Burger[]=[];
     menus!:any[];
     frite!:any[];

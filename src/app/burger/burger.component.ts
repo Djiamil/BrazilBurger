@@ -5,11 +5,13 @@ import { Burger } from '../models/Burger.model';
 import { BurgerService } from '../services/burger.service';
 import { PanierService } from '../services/panier.service';
 
+
 @Component({
   selector: 'app-burger',
   templateUrl: './burger.component.html',
   styleUrls: ['./burger.component.scss']
 })
+
 
 export class BurgerComponent implements OnInit {
   @Input() burger!: Burger;
@@ -36,7 +38,6 @@ item!: any;
       this.router.navigateByUrl(`burger/${this.burger.id}`);
   }
 
- 
 
 // addToCart(burgers:any) {
 //   this.panierservice.addToCart(burgers);

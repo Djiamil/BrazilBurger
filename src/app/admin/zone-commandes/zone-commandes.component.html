@@ -1,0 +1,25 @@
+
+<div class="container">
+    <div>
+    </div>
+    <table class="table">
+        <thead>
+            <tr class="bg-warning">
+            <th scope="col">N</th>
+            <th scope="col">Date Comande</th>
+            <th scope="col">Num commandes</th>
+            <th scope="col">prix</th>     
+            <th scope="col">Statut Comande</th>     
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <th scope="row">1</th>
+            <th scope="row">{{tabonZone.dateCommande |date:'h:mm:ss'}}</th>
+            <th scope="row">{{tabonZone.numComande}} </th> 
+            <th scope="row">{{tabonZone.paiement }} </th>        
+            <th scope="row">{{tabonZone.statutCommande }} </th>
+            <input type="checkbox" (click)="converTabCommande(tabonZone,elhtml)" name="tabonZone" value="{{tabonZone.id}}" #elhtml>   
+        </tbody>
+    </table>
+    <div>

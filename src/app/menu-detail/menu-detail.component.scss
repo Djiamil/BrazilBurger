@@ -1,15 +1,14 @@
 img{
-    width: 100%;
-    height: 31rem;
+    width: 32rem;
+    height: 35rem;
 }
-body{
+.gereca{
 
+    width: 85%;
     height: 70%;
-    background-color: antiquewhite;
     display: flex;   
     overflow: hidden;
     position: relative;
-    
 }
 
 
@@ -21,18 +20,20 @@ h1{
     font-size: 60%;
 }
 .image-container{
-    width: 56%;
+
+    width: 40%;
     height: 70vh;
-    border: solid black 2px;
+    // border: solid black 2px;
     margin-left: 0%;
     display: flex;
 
 
 }
 .detaillimagedetaille{
-    width: 44%;
+
+    width: 30%;
     height: 70vh;
-    border: solid black 2px;
+    // border: solid black 2px;
     display: flex;
     flex-direction: column;
 
@@ -41,17 +42,18 @@ h1{
 .textdetaile{
 
     display: flex;
-    border: solid black 2px;
+    // border: solid black 2px;
     justify-content: center;
     align-items: center;
 }
 
 .detaillernomdescription{
+
     height: 30vh;
     margin: 2rem;
     display: flex;
     border: 2rem;
-    border: solid black 2px;
+    // border: solid black 2px;
     justify-content: center;
     align-items: center;
 
@@ -67,7 +69,7 @@ h1{
     margin-top: 5%;
     // margin: 2rem;
     display: flex;
-    border: solid black 2px;
+    // border: solid black 2px;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -89,9 +91,9 @@ h1{
 
 
 .ajouter{
-    background-color: antiquewhite;
+    // background-color: antiquewhite;
     display: flex;   
-    margin-top: 10rem;
+    margin-top: 15rem;
     width: 44%;
     height: 70vh;
     justify-content: space-between;
@@ -103,17 +105,20 @@ h1{
 
 }
 .alivrer{
+
     display: flex;
     margin: 2rem;
     justify-content: center;
     align-items: center;
 }
 .surplace{
+
     display: flex;
     justify-content: center;
     align-items: center;
 }
 button{
+
     width: 10rem;
     display: flex;
     height: 2rem;
@@ -121,13 +126,17 @@ button{
     align-items: center;
 }
 .tafder{
+
     display: flex;
     height: 20vh;
     width: auto;
-    border: solid red 4px;
+    margin: 5%;
+    margin-top: 0;
+    // border: solid red 4px;
 
 }
 .boissonrepeat{
+
     height: 20%;
     display: flex;
    
@@ -136,6 +145,7 @@ button{
 
 
 .zone{
+
     position:absolute;
     display: flex;
     justify-content: center;
@@ -147,39 +157,153 @@ button{
     margin-left: 75%;
     margin-top: 8%;
 }
-input{
-    height: 2rem;
-    width: 3rem;
-    margin: 1rem;
-    display: flex;
-    border-radius: 20%;
-    border-color: yellow;
-}
 
-les boissons
+
 input{
+
     height: 2rem;
     width: 3rem;
-    margin: 1rem;
     display: flex;
     border-radius: 20%;
     border-color: yellow;
 }
 .parcour{
+
     height:20%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
-img{
-    margin: 0%;
-    width: 10rem;
-    height: 3rem;
+.imgboissons{
+
+    text-align: center;
+    width: 5rem;
+    height: 4rem;
 }
-.button{
+.plusmoin{
+
     height: 2rem;
-    width: 1rem;
-    margin: 2rem;
+    width: 0.5rem;
     display: flex;
     border-radius: 20%;
     border-color: yellow;
 }
+
+.produis{
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+}
+
+
+
+.menusumulaire{
+
+    width: 90%;
+    height: 20vh;
+    display: flex;
+    // border: solid 4px black;
+    position: absolute;
+    margin: 0%;
+    margin-top: 8%;
+    flex-direction: column;
+
+}
+
+.imgsumulaire{
+
+    width: 15rem;
+    height: 10rem;
+    margin: 1rem;
+    margin-top: 0;
+   
+}
+
+.prodsumulair{
+
+    width: 100%;
+    height: 20vh;
+    overflow-x:scroll; 
+    overflow-y:hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // flex-wrap: wrap;
+}
+.produisparcour{
+
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+
+    .lescomplements{
+        display: flex;
+        // border: solid 4px black;
+        position: absolute;
+        width: 30%;
+        height: 70vh;
+        margin-left:69% ;
+    }
+    .boissonscomplement{
+        display: flex;
+        // border: solid 4px black;
+        width: 50%;
+        height: 70vh;
+        overflow-y: scroll;
+        flex-direction: column;
+  
+
+        
+    }
+    .boissonsparcour{
+        display: flex;
+        height: 7vh;
+        width: 30%;
+        margin: 1rem;
+    }
+    .boissonImage{
+        height: 5rem;
+        width: 5rem;
+        margin: 1rem;
+    }
+
+    .fritescomplement{
+        display: flex;
+        // border: solid 4px black;
+        width: 50%;
+        height: 70vh;
+        overflow-y: scroll;
+        flex-direction: column;
+    }
+    .friteparcour{
+        display: flex;
+        height: 7vh;
+        width: 30%;
+        margin: 1rem;
+ 
+    }
+    .imgfritesimage{
+        
+        height: 5rem;
+        width: 5rem;
+        margin: 1rem;
+    }
+// .boissonstitres{
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     width: 50%;
+//     height: 1rem;
+// }
+// .fritetitres{
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     width: 50%;
+//     height: 1rem;
+// }

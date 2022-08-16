@@ -1,134 +1,101 @@
-
-<div class=" d-flex align-items-center ">
-<div class="container">
-      <div class="card w-60" >
+<div class="d-flex align-items-center bg-warning m-5 changer">
+  <div class="container">
+    <div class="card w-60">
       <div class="card-content" *ngFor="let burger of items$ | async">
-        <div class="row m-4 d-flex justify-content-between align-items-center" id="{{burger.id}}">
+        <div
+          class="row m-4 d-flex justify-content-between align-items-center"
+          id="{{ burger.id }}"
+        >
           <div class="col-md-2 col-lg-2 col-xl-2">
             <img
-              src="{{burger.lima}}"
-              class="img-fluid rounded-3" alt="Cotton T-shirt">
+              src="{{ burger.lima }}"
+              class="img-fluid rounded-3"
+            />
           </div>
-
 
           <div class="col-md-3 col-lg-3 col-xl-2 d-flex w-25">
             <form class="form-horizontal">
-            <input id="form1" min="0" name="quantity" value="{{burger.quantity}}" [(ngModel)]="burger.quantity" ngModel type="number" #qtt
-              class="form-control form-control-sm" (change)="calculePrix(burger,qtt.value);calculePrixTotal()">
+              <input
+                id="form1"
+                min="0"
+                name="quantity"
+                value="{{ burger.quantity }}"
+                [(ngModel)]="burger.quantity"
+                ngModel
+                type="number"
+                #qtt
+                class="form-control form-control-sm"
+                (change)="calculePrix(burger, qtt.value); calculePrixTotal()"
+              />
             </form>
           </div>
 
-
           <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-            <h6 class="mb-0">{{burger.prix}} Prix du burger</h6>
+            <h6 class="mb-0">{{ burger.prix }} Prix du produit</h6>
           </div>
 
-
           <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-            <h6 class="mb-0">{{burger.prix * burger.quantity}} Prix des burgers</h6>
+            <h6 class="mb-0">
+              {{ burger.prix * burger.quantity }} Prix des burgers
+            </h6>
           </div>
 
-
-          
-          
-      <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-        <a href=""></a> <i class="bi bi-trash3-fill" (click)="deleteToCart(burger)"></i>
-
-     </div>
-      </div>
-    </div>
-    <div class="d-flex justify-content-between mb-5">
-      <h5 class="text-uppercase">Prix Total</h5>
-      <h5>{{sum}}</h5>
-    </div>
-    <div >
-      <button class="btn btn-primary btn-xs" (cli)="validerCommande()">Valider Commande</button>
-    </div>>
-</div>
-</div>
-<!-- <ul>
-    
-    <div class="container">
-        <p class="text-center">Les Produit que vous avez commandez</p>
-        <section class="h-100 h-custom" style="background-color: #d2c9ff;">
-            <div class="container py-5 h-100">
-                <div class="row d-flex justify-content-center align-items-center h-100">
-                    <div class="col-12">
-                        <div class="card card-registration card-registration-2" style="border-radius: 15px;">
-                            <div class="card-body p-0">
-                                <div class="row g-0">
-                                    <div class="col-lg-8">
-                                        <div class="p-5">
-                                            <div class="d-flex justify-content-between align-items-center mb-5">
-                                                <h1 class="fw-bold mb-0 text-black">Shopping Cart</h1>
-                                                <h6 class="mb-0 text-muted">3 items</h6>
-                                            </div>
-                                            <li *ngFor="let burger of items$ | async">
-                        <hr class="my-4">
-      
-                        <div class="row mb-4 d-flex justify-content-between align-items-center" id="{{burger.id}}">
-                          <div class="col-md-2 col-lg-2 col-xl-2">
-                            <img
-                              src="{{burger.lima}}"
-                              class="img-fluid rounded-3" alt="Cotton T-shirt">
-                          </div>
-                          <div class="col-md-3 col-lg-3 col-xl-3">
-                            <h6 class="text-muted">Shirt</h6>
-                            <h6 class="text-black mb-0">{{burger.nom}}</h6>
-                          </div>
-                          <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                            <button class="btn btn-link px-2"
-                              onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                              <i class="fas fa-minus"></i>
-                            </button>
-                            <form>
-                            <input id="form1" min="0" name="quantity" value="{{burger.quantity}}" [(ngModel)]="burger.quantity" ngModel type="number"
-                              class="form-control form-control-sm" />
-                            </form>
-      
-                            <button class="btn btn-link px-2"
-                              onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                              <i class="fas fa-plus"></i>
-                            </button>
-                          </div>
-                          <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                             <a href=""></a> <i class="bi bi-trash3-fill" (click)="deleteToCart(burger)"></i>
-
-                          </div>
-                          <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                            <h6 class="mb-0">{{burger.prix}} Prix du burger</h6>
-                          </div>
-                          <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                            <h6 class="mb-0">{{burger.prix * burger.quantity}} Prix des burgers</h6>
-                          </div>
-                          
-                          <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                            <a href="#!" class="text-muted"><i class="fas fa-times"></i></a>
-                          </div>
-                        </div>
-                        <div class="d-flex justify-content-between mb-5">
-                          <h5 class="text-uppercase">Prix Total</h5>
-                          <h5>{{+burger.prix * burger.quantity}}</h5>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-4 bg-grey">
-                      <div class="p-5">
-                       
-      
-                        <button type="button" class="btn btn-dark btn-block btn-lg"
-                          data-mdb-ripple-color="dark">Commander</button>
-      
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+            <a href=""></a>
+            <i class="bi bi-trash3-fill" (click)="deleteToCart(burger)"></i>
           </div>
         </div>
-      </section>
-       <form class="form-outline">
-        <input id="form1" min="1" name="quantity" value="{{burger.quantity}}" [(ngModel)]="burger.quantity" type="number" NgModel class="form-control" />
-        <label class="form-label" for="form1">Quantity</label>
-    </form> -->
+      </div>
+      <div class="d-flex justify-content-between mb-5">
+        <h5 class="text-uppercase">Prix Total</h5>
+        <h5>{{ sum }}</h5>
+      </div>
+      <div>
+        <button class="btn btn-warning btn-xs" (click)="validerCommande()">
+          Valider Commande
+        </button><button class="btn btn-warning btn-xs">
+          Sur place
+        </button><button class="btn btn-warning btn-xs" (click)="addClasse()">
+          Â livrer
+        </button>
+      </div>
+    </div>
+    <div class="parenzone" [hidden]="pare">
+      <div class="zone">  
+        <div *ngFor="let tzone of zones">   
+        <select class="form-select" aria-label="select example"(change)="togoleElement()">
+          <option  selected  disabled >----Veiller soisir votre zone----</option>
+          <option value="{{tzone.nomzone}}">{{tzone.nomzone}}</option>
+        </select> 
+      </div>
+      </div>
+    </div>
+
+
+  </div>
+  <div class="complementpanier">
+      <div class="complementBoisson">
+
+        <div>
+            <p>Boissons complement</p>
+        </div>
+        <div *ngFor="let boison of boisson" class="friteslister">
+            <img src="/assets/boisson6.jpg" [alt]="boison.nom" class="imgfritesComplement"/>
+            <p>{{boison.nom}}</p>
+        </div>
+
+      <div class="fritesComplement">
+          
+        <div>
+          <p>Frites complement</p>
+      </div>
+      <div *ngFor="let frite of frites" class="friteslister">
+         <img [src]="convertureImage(frite.image)" [alt]="frite.nom" class="imgfritesComplement" />
+          <p>{{frite.nom}}</p>
+
+      </div>
+
+      </div>
+    </div>
+
+

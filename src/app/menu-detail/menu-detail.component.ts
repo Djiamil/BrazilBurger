@@ -16,23 +16,28 @@ import {PanierService } from '../services/panier.service';
 })
 export class MenuDetailComponent implements OnInit {
   @Input() menu!: any;
-  @Input() boisson!: Boisson;
+  // @Input() boisson!: Boisson;
   @Input() tailles!:any[];
   @Input() tailes!:any[];
- @Input() boissonss!:Boisson;
+//  @Input() boissonss!:Boisson;
 
-  parameters !: number;
+ parameters !: number;
   
   burgerMenus!:any[];
   burgerMenu!:any;
   burgerM!:Burger[];
 
+  frites: Menu[]=[];
+boisson: any
+
   constructor(private route: ActivatedRoute,
     private menuService: MenuService,
     private boissonService: BoissonsService,
-    private zoneService: ZoneService,private panierservice: PanierService) { }
+    private zoneService: ZoneService,private panierservice: PanierService,
+    private boissonservice: BoissonsService,
+    ) { }
 
-  boissons: Boisson[]=[];
+  // boissons: Boisson[]=[];
   menus!:any[];
 
 
@@ -42,9 +47,12 @@ zone: boolean = true;
 
 OnMenu!:any;
 quantity: number = 0;
-param!:string;
+// param!:string;
 libele!:string;
+
 tab:any;
+sumulair: Menu[]=[];
+sumule: Menu[]=[];
   ngOnInit(): void {
     this.lesZones();
   this.parameters = +this.route.snapshot.params['id'];
@@ -56,6 +64,23 @@ tab:any;
   this.quantity = sub.quantity
   // this.QuInput(input); 
   })
+  this.menuService.getMenuBaseDonne().subscribe(data =>{
+    this.sumulair = data;
+    this.sumulair.forEach(el =>{
+      if(el.id != this.parameters){
+        this.sumule.push(el)
+        // console.log(this.sumule);
+    }
+    })
+   
+
+  })
+   //lister les frites complements
+   this.getFrites();
+   //lister les Boissons
+ this.getBoissons();
+    
+   
   }
   
   zones(){
@@ -83,8 +108,8 @@ tabzones:any
       somme = 0;
     if(sommeTotal < this.quantity){
      input.value++;
-    console.log(sommeTotal);
-    console.log(this.quantity);
+    // console.log(sommeTotal);
+    // console.log(this.quantity);
     
    } else{
       this.taf= false;
@@ -100,7 +125,7 @@ tabzones:any
     if(input.value >0)  
     input.value--;
     this.taf= true;
-    console.log(input.value);
+    // console.log(input.value);
   }
 
 
@@ -108,6 +133,31 @@ tabzones:any
 addQantity(menu:Menu){
   this.panierservice.addQantity(menu,this.item)
 }
+
+  //methode converture les image 
+  convertureImage(param:string){
+    return this.menuService.convertImage(param);
+  }
+
+  getFrites(){
+    this.boissonservice.getFrites().subscribe(frites=>{
+      this.frites =frites;
+      // console.log(this.frites);
+    })
+  }
+  getBoissons(){
+    this.boissonservice.getBoissons().subscribe(boissons=>{
+      this.boisson = boissons
+      // console.log(boissons);
+  })
+  }
+
+  //Rechargement du menu simulair
+  detailleSumulair(){
+    this.parameters = +this.route.snapshot.params['id'];
+  this.menu = this.menuService.getOnMenu(this.parameters);
+  }
+
 }
 
 

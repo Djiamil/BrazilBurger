@@ -1,9 +1,9 @@
 <p>Detail Du menu</p>
 
 
-<body>
+<div class="gereca bg-warning container">
     <div class="image-container">
-        <img [src]="menu.image">
+        <img [src]="convertureImage(menu.image)" [alt]="menu.nom">
     </div>
     <div class="detaillimagedetaille">
             
@@ -24,12 +24,6 @@
                         <div class="commander">
                             <button type="button" id="addclasses" [disabled]="taf" (click)="addQantity(menu)">Ajouter au panier</button>
                         </div>
-                        <div class="alivrer">
-                            <button type="button" id="addclasses"  >Sur place</button>
-                        </div>
-                        <div class="surplace">
-                            <button type="button" id="addclasses" (click)="zones()">Â livrer</button>
-                        </div>
                     </div>
      </div>  
 
@@ -39,17 +33,50 @@
             <option value="1">{{tzone.nomzone}}</option>
         </select> 
     </div>
-</body>
+
+        <div class="lescomplements">
+           
+           
+            
+            <div class="boissonscomplement">
+                <div class="boissonstitres">
+                    <p>complement Boissons</p>
+                </div>
+                <div *ngFor="let boison of boisson" class="boissonsparcour">
+                    <img src="/assets/boisson6.jpg" [alt]="boison.nom" class="boissonImage"/>
+                    <p>{{boison.nom}}</p>
+                </div> 
+
+
+            </div>
+
+            <div class="fritescomplement">
+                <div class="fritetitres">
+                    <p>Complement frites</p>
+                </div>
+                <div *ngFor="let frite of frites" class="friteparcour">
+                    <img [src]="convertureImage(frite.image)" [alt]="frite.nom" class="imgfritesimage" />
+                     <p>{{frite.nom}}</p>
+             
+                 </div>
+
+            </div>
+        </div>
+
+
+
+
+</div>
     <div class="tafder">
     <div class="boissonrepeat">
 
-        <div class="parcour" *ngFor="let taile of tailes">
+        <div class="parcour container" *ngFor="let taile of tailes">
             <p>{{taile.nom}}</p>    
-            <img src="assets/boisson1.jpg" alt="">
+            <img src="assets/boisson1.jpg" alt="" class="img-responsive imgboissons">
             <p>{{taile.prix}}
-            <button (click)="addmoins(input)">-</button>
+            <button class="plusmoin"(click)="addmoins(input)">-</button>
             <input type="number" id="{{taile.id}}" #input class="" min="0" value="0">
-            <button (click)="addplus(input)">+</button> value=
+            <button class="plusmoin" (click)="addplus(input)">+</button>
         </div>
 
 
@@ -60,9 +87,18 @@
     <div>
         <span>{{libele}} : {{quantity}} </span>
     </div>
+    <div class="menusumulaire">
 
+
+        <div class="produis">
+            <p>Produits simulair</p>
+        </div>
+       <div class="prodsumulair" >
+            <div *ngFor="let sumul of sumule" class="produisparcour"> 
+                <a [routerLink]="['/menu',sumul.id]" (click)="detailleSumulair()"><img [src]="convertureImage(sumul.image)" [alt]="sumul.nom" alt="" class="imgsumulaire"></a>
     
+            </div>
+        </div>
 
-  
-    
-
+    </div>
+   

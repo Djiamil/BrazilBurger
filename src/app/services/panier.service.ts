@@ -108,28 +108,33 @@ objetLigneCommande:any=[]
 ligneDeComm:any=[]
 zone:any
 post:any
-validerCommande(){
-  this.items$.subscribe(panier =>{
+validerCommande()
+{
+  this.items$.subscribe(panier =>
+  {
     this.table = panier;
-    console.log(this.table)
-    this.table.forEach(el =>{
-      this.objetLigneCommande = {
+    this.table.forEach(el =>
+    {
+      this.objetLigneCommande = 
+      {
         "produit":  "/api/produits/"+el.id,
-        "quantite":  +el.quantity
+        "quantite":  "22"
       }
       this.ligneDeComm.push(this.objetLigneCommande);
-      console.log(this.ligneDeComm);
     });
   });
-    this.https.post<any>('http://127.0.0.1:8000/api/commandes',
-    {
-      "produis": this.ligneDeComm,
-      "zone": "/api/zones/1",
-      "client": "/api/clients/63"
-    })
-    .subscribe((data) =>{
-      this.post.id = data.id
-    });
+  
+  console.log(this.ligneDeComm);
+  this.https.post<any>('http://127.0.0.1:8000/api/commandes',
+  {
+    "produis": this.ligneDeComm,
+    "zone": "/api/zones/1",
+    "client": "/api/clients/63",
+    // "gestionair": "/api/gestionairs/11",
+  }).subscribe();
+  localStorage.removeItem('products');
+  location.reload();
       
 }
+
 }

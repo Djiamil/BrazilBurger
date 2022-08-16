@@ -1,28 +1,18 @@
-
-
-<body>
-    <div class="imgburger">
-            <img src="assets/burger1.jpeg" [alt]="menu.nom" >
+<div class="imgburger">
+  <img [src]="convertureImage(menu.image)" [alt]="menu.nom" />
+</div>
+<div class="footerimage">
+  <div class="footerimageleft">
+    <div class="burgernom">
+      <p>{{ menu.nom }}</p>
     </div>
-    <div class="footerimage">
-        <div class="footerimageleft">
-            <div class="burgernom">
-                    <p>{{ menu.nom}}</p>
-            </div>
-            <div class="burgerprix">
-                    <p>prix{{ menu.prix}} </p>
-            </div>
-        </div>
-        <div class="footerimageright">
-            <div class="burgerdetails">
-                <span class= "detaillebtn" (click)="detaille()">Detaille</span>
-            </div>
-        </div>
-    </div> 
-</body>
-
-
-
-
-
-
+    <div class="burgerprix">
+      <p>prix{{ menu.prix }}</p>
+    </div>
+  </div>
+  <div class="footerimageright">
+    <div class="burgerdetails">
+      <span class="detaillebtn" (click)="detaille()">Detaille</span>
+    </div>
+  </div>
+</div>

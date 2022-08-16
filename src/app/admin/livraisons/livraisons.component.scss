@@ -1,0 +1,43 @@
+.container{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 50%;
+    margin-left: 3%;
+}
+div{
+    display: flex;
+}
+.livreurs{
+    height: 40vh;
+    width: 50%;
+    display: flex;
+    border: solid black 4px;
+    flex-wrap: wrap;
+}
+.livreurparcouri{
+    height: 2vh;
+    width: auto;
+    display: flex;
+    // flex-wrap: wrap;
+}
+
+.comndesZone{
+    display: flex;
+    height: 70vh;
+    width: 90%;
+    position: absolute;
+    border: solid black 4px;
+    margin-left: 92%;
+    overflow-y: scroll;
+    flex-wrap: wrap;
+    
+}
+button{
+    margin: 1%;
+}
+.livrerrer{
+    color: red;
+    text-align: center;
+    margin-left: 30%;
+}

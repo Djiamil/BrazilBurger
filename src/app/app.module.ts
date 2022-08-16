@@ -27,7 +27,12 @@ import { TailleboissonComponent } from './tailleboisson/tailleboisson.component'
 import { ZonesComponent } from './zones/zones.component';
 import { ClientComponent } from './client/client.component';
 import { ListecommandeclientComponent } from './listecommandeclient/listecommandeclient.component';
+import { CommandeComponent } from './commande/commande.component';
+import { DetailleCommandeComponent } from './detaille-commande/detaille-commande.component';
 
+
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -48,14 +53,18 @@ import { ListecommandeclientComponent } from './listecommandeclient/listecommand
     TailleboissonComponent,
     ZonesComponent,
     ClientComponent,
-    ListecommandeclientComponent
+    ListecommandeclientComponent,
+    CommandeComponent,
+    DetailleCommandeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule,
+    Ng2SearchPipeModule,
+    AdminModule
 
   ],
   providers: [

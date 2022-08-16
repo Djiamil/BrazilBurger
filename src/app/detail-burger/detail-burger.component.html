@@ -1,5 +1,5 @@
 
-<body>
+<div class="burger1 bg-warning  ">
         <div class="image-container">
             <img [src]="burger.lima" [alt]="burger.description" [title]="burger.description" >
         </div>
@@ -14,10 +14,40 @@
                     <!-- <p>{{ burger.description}}</p> -->
                 </div>
                 <div class="detaillerprix">
-                    <p>{{ burger.prix}}</p>
+                    <p>{{ burger.prix}} Fcfa</p>
                 </div>
                         <!-- <div class="detailler" *ngif="addclasses">
                         </div> -->
 
-            </div>  
-</body>
+            </div> 
+                <div class="boissonscomplement">
+                    <div>
+                        <p>Boissons complement</p>
+                    </div>
+                    <div *ngFor="let boison of boisson" class="friteslister">
+                        <img src="/assets/boisson6.jpg" [alt]="boison.nom" class="imgfritesComplement"/>
+                        <p>{{boison.nom}}</p>
+                    </div>
+                </div>
+
+                <div class="fritescomplement">
+                    <div>
+                        <p>Frites complement</p>
+                    </div>
+                    <div *ngFor="let frite of frites" class="friteslister">
+                       <img [src]="convertureImage(frite.image)" [alt]="frite.nom" class="imgfritesComplement" />
+                        <p>{{frite.nom}}</p>
+
+                    </div>
+                </div>
+
+        </div>
+        <div class="produis">
+            <p>Produits sumulair</p>
+        </div>
+       <div class="prodsumulair container d-flex " >
+            <div *ngFor="let sumul of sumulair" class="produisparcour"> 
+                <a [routerLink]="['/burger',sumul.id]"><img src="{{sumul.lima}}" alt="" class="imgsumulaire" (click)="detailleSumulair()"></a>
+
+            </div>
+        </div>

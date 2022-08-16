@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { from, Observable } from 'rxjs';
 import { Boisson } from '../models/boisson.model';
@@ -7,13 +8,13 @@ import { Boisson } from '../models/boisson.model';
 })
 export class BoissonsService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   boissons: Boisson[]= []
 
   getBoissons():Observable<Boisson>
   {
-    return from (this.boissons);
+    return this.http.get<any>('http://127.0.0.1:8000/api/boissons')
   }
 
 
@@ -35,7 +36,10 @@ export class BoissonsService {
     }
   }
  
-      
+     getFrites(): Observable<any>{
+
+      return this.http.get<any>('http://127.0.0.1:8000/api/frites')
+     }
     
 
 }

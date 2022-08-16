@@ -14,6 +14,7 @@ export class ClientComponent implements OnInit {
   constructor(private userservice: UserService,
     private router: Router,
     private route: ActivatedRoute,
+    private menuService: MenuService
 
     ) { }
 
@@ -24,11 +25,13 @@ export class ClientComponent implements OnInit {
   ngOnInit(): void {
     this.userservice.getClient().subscribe(user => {
       this.clients = user;
-      console.log('ok')
     })
   }
   CommandeClient(){
       this.router.navigateByUrl(`cliente/${this.client.id}`);
   }
+  modifEtatCommande(id:number){
+    return this.menuService.modifEtatCommande(id);
+   }
 
 }

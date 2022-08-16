@@ -14,7 +14,7 @@ export class BurgerListComponent implements OnInit {
 
 
   burger!: Burger[];
- mestruc =this.burgerService.getBurger();
+ mestruc = this.burgerService.getBurger();
   ngOnInit(): void {
    this.mestruc;
   }

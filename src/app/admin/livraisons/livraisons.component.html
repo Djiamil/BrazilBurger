@@ -1,0 +1,34 @@
+<div class="container">
+    <div>
+    <p>Listes des Zones a livrer</p>
+    <p [hidden]="livrer" class="livrerrer">Vos commandes serons livrer sous peu</p>
+
+    </div>
+    <table class="table">
+        <thead>
+            <tr class="bg-warning">
+            <th scope="col">N</th>
+            <th scope="col">Nom zone</th>
+            <th scope="col">Prix livraisons</th>        
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let zonesA of zonesAlivrer ">
+            <th scope="row">1</th>
+            <th scope="row">{{zonesA.nomzone}}</th>
+            <th scope="row">{{zonesA.prixLivraison}} </th>
+            <button type="button" class="btn btn-warning" (click)="recupIdLivreure(zonesA.id)">Commandes</button>
+            <button type="button" class="btn btn-warning color-black"  (click)="Livraisons(zonesA.id)">livrer</button>
+            </tr> 
+        </tbody>
+    </table>
+  <div class="comndesZone" [hidden]="cacheZones">
+    <app-zone-commandes *ngFor="let tabZ of comandeZoneTrue" [tabonZone]="tabZ"></app-zone-commandes>
+    <!-- <p>{{tabZone.nomzone}}</p> -->
+  </div>
+</div>
+<div class="livreurs">
+    <app-livreurs *ngFor="let livr of livreursdispo" [tablivreurs]="livr">
+            <p>Les commandes de ce Zones</p>
+        </app-livreurs>
+</div>

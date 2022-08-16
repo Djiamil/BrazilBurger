@@ -1,0 +1,30 @@
+<div class="container">
+    <p>La liste Des commandes</p>
+    <input type="date" class="form-control" ng-model="MyDatee | date:'medium'" placeholder="Affichage par date" [value]="filterdates" [(ngModel)]="filterdate"/>
+    <table class="table">
+        <thead>
+            <tr class="bg-warning">
+            <th scope="col">N</th>
+            <th scope="col">Heur</th>
+            <th scope="col">Etat</th>
+            <th scope="col">Numero Commande</th>
+            <th scope="col">Prix</th>
+            <th scope="col">Statut Commande</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item  of comandes | filter:filterdate" >
+            <th scope="row">{{nombr}}</th>
+            <th scope="row">{{item.dateCommande}} </th>
+            <td>{{item .isEtatPaiement}}</td>
+            <td>{{item .numComande}}</td>
+            <td>{{item .paiement}} Fcfa</td>
+            <td>{{item .statutCommande}}</td>
+            <button class="btn btn-warning">Details</button>
+            <button class="btn btn-warning" (click)="modifEtatCommande(item .id)" id="btn+{{item.id}}" (change)="this.recupdate()">Annuler</button>
+            </tr>
+        
+          
+        </tbody>
+    </table>
+</div>
